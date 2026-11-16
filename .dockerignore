@@ -1,0 +1,15 @@
+.git/
+.gitignore
+.venv/
+__pycache__/
+*.py[oc]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.env
+.env.*
+!.env.example
+chroma_db/
+tests/
+Dockerfile
+.dockerignore
