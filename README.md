@@ -61,7 +61,7 @@ uv run python -c "import secrets; print(secrets.token_urlsafe(32))"
 
 ## Ingestão de documentos (RAG)
 
-Os arquivos PDF usados na base interna ficam em `data/` (o repositório já inclui `data/relatorio_nexatech.pdf` como exemplo). Para indexar os documentos no ChromaDB:
+Os arquivos PDF usados na base interna ficam em `data/`. O repositório já inclui `data/relatorio_nexatech.pdf`, que trata de uma **empresa fictícia** (`NexaTech Solutions`) e serve **apenas para exemplificar o funcionamento do RAG** — você pode adicionar ou substituir pelos seus próprios PDFs antes de indexar. Para indexar os documentos no ChromaDB:
 
 ```bash
 uv run python -m projeto_researchteam.rag
@@ -70,6 +70,8 @@ uv run python -m projeto_researchteam.rag
 O script quebra os PDFs em chunks de 1000 caracteres (overlap de 200), gera os embeddings com `text-embedding-3-small` e persiste o índice em `chroma_db/` com `tenant_id="default_tenant"`.
 
 ## Executando o projeto
+
+Na execução (via CLI ou API), você pode informar **qualquer empresa** — caso não existam documentos sobre ela na base interna do RAG, o agente fará a pesquisa normalmente utilizando a busca na web e extração de páginas. Os exemplos abaixo usam `NexaTech Solutions` apenas para exercitar o PDF fictício de exemplo.
 
 ### Via CLI
 

@@ -18,7 +18,7 @@ wheels/
 chroma_db/
 
 # Documentos internos (bloqueia PDFs confidenciais, libera apenas o exemplo fictício)
-data/*.pdf
+data/*
 !data/relatorio_nexatech.pdf
 
 # Testes, cobertura e linters
